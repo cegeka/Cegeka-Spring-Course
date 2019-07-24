@@ -1,7 +1,9 @@
-package com.cegeka.springcourse.dependencyinjection;
+package com.cegeka.springcourse.dependencyinjection.pills;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
+@RestController
 public class PillsController {
 
     @GetMapping(path = "/pills")

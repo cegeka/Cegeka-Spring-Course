@@ -1,7 +1,9 @@
-package com.cegeka.springcourse.dependencyinjection;
+package com.cegeka.springcourse.dependencyinjection.payment;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
+@RestController
 public class PaymentController {
 
     @GetMapping(path = "/pay")

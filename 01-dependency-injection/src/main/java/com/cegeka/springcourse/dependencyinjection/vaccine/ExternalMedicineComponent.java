@@ -1,4 +1,4 @@
-package com.cegeka.springcourse.dependencyinjection;
+package com.cegeka.springcourse.dependencyinjection.vaccine;
 
 public class ExternalMedicineComponent {
 

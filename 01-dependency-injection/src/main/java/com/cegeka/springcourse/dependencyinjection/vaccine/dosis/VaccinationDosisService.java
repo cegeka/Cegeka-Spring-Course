@@ -1,4 +1,4 @@
-package com.cegeka.springcourse.dependencyinjection.dosis;
+package com.cegeka.springcourse.dependencyinjection.vaccine.dosis;
 
 public interface VaccinationDosisService {
 

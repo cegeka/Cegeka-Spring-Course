@@ -17,8 +17,8 @@ public class SleepingPatternController {
     }
 
     @PostMapping()
-    public SleepingPatternData addSleepingData(@RequestBody SleepingPatternData sleepingPatternData) {
-        sleepingPatternData.generateId();
+    public SleepingPatternData addSleepingData(@RequestBody SleepingPatternDataInput sleepingPatternDataInput) {
+        SleepingPatternData sleepingPatternData = new SleepingPatternData(sleepingPatternDataInput.getDataPoints());
         sleepingPatternDataList.add(sleepingPatternData);
         return sleepingPatternData;
     }

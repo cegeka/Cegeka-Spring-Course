@@ -1,4 +1,6 @@
-package com.cegeka.springcourse.database;
+package com.cegeka.springcourse.database.Ingredient;
+
+import org.hibernate.annotations.Type;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,9 +16,15 @@ public class Ingredient {
     @Column(name = "NAME")
     private String name;
     @Column(name = "GLUTENFREE")
+    @Type(type= "org.hibernate.type.NumericBooleanType")
     private boolean containGluten;
 
     private Ingredient(){}
+
+    public Ingredient(String name, boolean containGluten) {
+        this.name = name;
+        this.containGluten = containGluten;
+    }
 
     public int getId() {
         return id;

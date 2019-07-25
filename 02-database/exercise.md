@@ -37,3 +37,4 @@ Similar steps as in exercise 3 should be followed.
 
 https://spring.io/blog/2011/04/26/advanced-spring-data-jpa-specifications-and-querydsl/ <br/>
 https://www.baeldung.com/rest-api-search-language-spring-data-specifications
+https://dzone.com/articles/using-spring-data-jpa-specification

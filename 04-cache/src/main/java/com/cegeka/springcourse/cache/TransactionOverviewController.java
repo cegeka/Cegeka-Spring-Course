@@ -12,6 +12,8 @@ public class TransactionOverviewController {
 
     @Autowired
     private TransactionService transactionService;
+    @Autowired
+    private TransactionPoundService transactionPoundService;
 
     @GetMapping(value = "/transaction/{id}")
     public List<Transaction> getTransactionsForUser(@PathVariable("id") String id) {
@@ -25,6 +27,6 @@ public class TransactionOverviewController {
 
     @GetMapping(value = "/transaction/{id}/pound")
     public List<Transaction> getAllTransactionsByUserInPound(@PathVariable("id") String id) {
-        return transactionService.getAllTransactionsByUserInPound(id);
+        return transactionPoundService.getAllTransactionsByUserInPound(id);
     }
 }

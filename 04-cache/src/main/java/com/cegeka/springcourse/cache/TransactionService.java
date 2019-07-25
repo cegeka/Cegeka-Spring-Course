@@ -22,14 +22,4 @@ public class TransactionService {
                 .filter(transaction -> transaction.getFrom().equals(id))
                 .collect(Collectors.toList());
     }
-
-    public List<Transaction> getAllTransactionsByUserInPound(String id) {
-        return getAllTransactionsForUser(id)
-                .stream()
-                .map(transaction -> {
-                    transaction.setAmountInCent(transaction.getAmountInCent() * 20);
-                    return transaction;
-                })
-                .collect(Collectors.toList());
-    }
 }

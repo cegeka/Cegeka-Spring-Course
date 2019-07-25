@@ -6,8 +6,12 @@ Maybe caching can help them speed up the call?
 
 1. In TransactionService, make getAllTransactionsForUser respond faster if it is called twice for the same user in a short amount of time.
 2. Do the same for getAllTransactionsStartedByUser.
-3. Do the same for getAllTransactionsByUserInPound. Now run it a few times. Wait...are the values changing?
-
-##Extra
-
-1. Instead of directly returning a 403 error when the delete call goes wrong, throw a custom exception and add an errorhandler to return the correct http code.
+3. Do the same for getAllTransactionsByUserInPound. 
+Now run it a few times. <br /> 
+Wait...are the values changing?
+That should not happen...
+4. Implement the clearCache method in cacheController. 
+It should clear the cache whose name was passed through in the REST call. 
+5. Implement the preCache method. 
+It allows a cache whose name was passed to be filled programmatically. 
+The key is the id that is provided, the value can be an empty list.

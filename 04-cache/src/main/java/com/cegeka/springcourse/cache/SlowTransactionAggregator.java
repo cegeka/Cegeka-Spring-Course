@@ -33,7 +33,7 @@ import java.util.List;
 public class SlowTransactionAggregator {
 
     public List<Transaction> getTransactionsForUser(String id) {
-        System.out.println("CACHE WAS NOT HIT!");
+        System.out.println("Cache was not hit!");
         List<Transaction> transactions = new ArrayList<>();
         transactions.add(new Transaction(id, "ABC", 15));
         transactions.add(new Transaction(id, "DEF", 25));

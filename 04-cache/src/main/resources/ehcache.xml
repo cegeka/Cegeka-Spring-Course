@@ -1,0 +1,26 @@
+<ehcache>
+    <cache name="transaction.user"
+           maxEntriesLocalHeap="3"
+           eternal="false"
+           timeToIdleSeconds="30"
+           timeToLiveSeconds="30"
+           memoryStoreEvictionPolicy="LFU"
+           transactionalMode="off">
+    </cache>
+    <cache name="transaction.user.from"
+           maxEntriesLocalHeap="3"
+           eternal="false"
+           timeToIdleSeconds="30"
+           timeToLiveSeconds="30"
+           memoryStoreEvictionPolicy="LFU"
+           transactionalMode="off">
+    </cache>
+    <cache name="transaction.user.pound"
+           maxEntriesLocalHeap="3"
+           eternal="false"
+           timeToIdleSeconds="30"
+           timeToLiveSeconds="30"
+           memoryStoreEvictionPolicy="LFU"
+           transactionalMode="off">
+    </cache>
+</ehcache>

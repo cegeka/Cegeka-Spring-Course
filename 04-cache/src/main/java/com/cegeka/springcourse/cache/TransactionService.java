@@ -1,6 +1,7 @@
 package com.cegeka.springcourse.cache;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,24 +13,17 @@ public class TransactionService {
     @Autowired
     private SlowTransactionAggregator slowTransactionAggregator;
 
+    @Cacheable("transaction.user")
     public List<Transaction> getAllTransactionsForUser(String id) {
         return slowTransactionAggregator.getTransactionsForUser(id);
     }
 
+    //you cant 'reuse' the cache from getAllTransactionsForUser. Calling a cached method from the same class, wont trigger the caching
+    @Cacheable("transaction.user.from")
     public List<Transaction> getAllTransactionsStartedByUser(String id) {
         return getAllTransactionsForUser(id)
                 .stream()
                 .filter(transaction -> transaction.getFrom().equals(id))
-                .collect(Collectors.toList());
-    }
-
-    public List<Transaction> getAllTransactionsByUserInPound(String id) {
-        return getAllTransactionsForUser(id)
-                .stream()
-                .map(transaction -> {
-                    transaction.setAmountInCent(transaction.getAmountInCent() * 20);
-                    return transaction;
-                })
                 .collect(Collectors.toList());
     }
 }

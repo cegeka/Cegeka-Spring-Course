@@ -10,6 +10,7 @@ public class HotelStay implements Serializable {
     private HotelGuest hotelGuest;
     private LocalDate startDate;
     private LocalDate endDate;
+    private String sleepingPatternDataId;
 
     public HotelStay(HotelGuest hotelGuest) {
         id = UUID.randomUUID().toString();
@@ -32,5 +33,13 @@ public class HotelStay implements Serializable {
 
     public LocalDate getEndDate() {
         return endDate;
+    }
+
+    public void setSleepingPatternDataId(String sleepingPatternDataId) {
+        this.sleepingPatternDataId = sleepingPatternDataId;
+    }
+
+    public String getSleepingPatternDataId() {
+        return sleepingPatternDataId;
     }
 }

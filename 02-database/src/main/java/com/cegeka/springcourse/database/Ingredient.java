@@ -5,15 +5,10 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "INGREDIENTS")
 public class Ingredient {
 
-    @Id
     private int id;
-    @Column(name = "NAME")
     private String name;
-    @Column(name = "GLUTENFREE")
     private boolean containGluten;
 
     private Ingredient(){}

@@ -25,7 +25,7 @@ Similar steps as in exercise 3 should be followed.
 
 5. Implement the addIngredient method on IngredientController
 
-6. Implement the removeIngredient method on IngredientController
+6. Implement the removeIngredient method on IngredientController. What happens if you remove an Ingredient that is coupled to an Order?
 
 7. Implement the updateIngredientName method on IngredientController
 
@@ -34,6 +34,8 @@ Similar steps as in exercise 3 should be followed.
 1. Rewrite the getOrdersForCustomer with a JdbcTemplate query.
 
 2. Create specifications to find Customers whose first and last name contain 'p' and who do not have a senior discount. 
+Implement this in the getUsingSpecification in CustomerController.
 
+https://dzone.com/articles/using-spring-data-jpa-specification <br/>
 https://spring.io/blog/2011/04/26/advanced-spring-data-jpa-specifications-and-querydsl/ <br/>
 https://www.baeldung.com/rest-api-search-language-spring-data-specifications

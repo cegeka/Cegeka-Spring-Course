@@ -2,6 +2,7 @@ package com.cegeka.springcourse.database;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -31,14 +32,14 @@ public class IngredientController {
     }
 
     @GetMapping("/add/ingredient/{name}")
-    public void addIngredient(@PathParam("name") String name) {
+    public void addIngredient(@PathVariable("name") String name) {
     }
 
     @GetMapping("/remove/ingredient/{id}")
-    public void removeIngredient(@PathParam("id") String id) {
+    public void removeIngredient(@PathVariable("id") String id) {
     }
 
     @GetMapping("/update/ingredient/{id}/{name}")
-    public void updateIngredientName(@PathParam("id") String id, @PathParam("name") String name) {
+    public void updateIngredientName(@PathVariable("id") String id, @PathVariable("name") String name) {
     }
 }

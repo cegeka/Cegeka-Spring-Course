@@ -6,8 +6,7 @@ Maybe caching can help them speed up the call?
 
 1. In TransactionService, make getAllTransactionsForUser respond faster if it is called twice for the same user in a short amount of time.
 2. Do the same for getAllTransactionsStartedByUser.
-3. Do the same for getAllTransactionsByUserInPound. 
-Now run it a few times. <br /> 
+3. Now run getAllTransactionsByUserInPound a few times. <br /> 
 Wait...are the values changing?
 That should not happen...
 4. Implement the clearCache method in cacheController. 

@@ -10,12 +10,12 @@ public class GoodieBagController {
     @Autowired
     private GoodieBagService goodieBagService;
 
-    @GetMapping
+    @GetMapping("/goodiebag")
     public GoodieBag getRegularGoodieBag() {
         return goodieBagService.getRegularGoodieBag();
     }
 
-    @GetMapping("/vip")
+    @GetMapping("/goodiebag/vip")
     public GoodieBag getVipGoodieBag() {
         return goodieBagService.getVipGoodieBag();
     }

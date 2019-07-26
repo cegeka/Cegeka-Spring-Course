@@ -11,6 +11,7 @@ public class GoodieBagStock {
 
     public GoodieBagStock() {
         stockRemainingPerItem.put("bag", 100);
+        stockRemainingPerItem.put("sunglasses", 100);
         stockRemainingPerItem.put("voucher", 9999);
         stockRemainingPerItem.put("cap", 5);
         stockRemainingPerItem.put("champagne", 20);
@@ -18,10 +19,28 @@ public class GoodieBagStock {
     }
 
     public String getGood(String name) {
-        if(stockRemainingPerItem.containsKey(name) && stockRemainingPerItem.get(name) > 0) {
+        if (stockRemainingPerItem.containsKey(name) && stockRemainingPerItem.get(name) > 0) {
             return name;
         }
         throw new IllegalArgumentException("We are out of " + name + "s");
     }
 
+    public void depleteStock(GoodieBagType goodieBagType) {
+        decrementStock("bag");
+        decrementStock("sunglasses");
+        decrementStock("voucher");
+        decrementStock("cap");
+        if (GoodieBagType.VIP.equals(goodieBagType)) {
+            decrementStock("voucher");
+            decrementStock("voucher");
+            decrementStock("voucher");
+            decrementStock("voucher");
+            decrementStock("champagne");
+            decrementStock("tent");
+        }
+    }
+
+    private void decrementStock(String item) {
+        stockRemainingPerItem.replace(item, stockRemainingPerItem.get(item) - 1);
+    }
 }

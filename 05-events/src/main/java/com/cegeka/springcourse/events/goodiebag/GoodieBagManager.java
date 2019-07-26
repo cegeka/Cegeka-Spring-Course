@@ -15,6 +15,7 @@ public class GoodieBagManager {
     public GoodieBag pullRegularBagFromStock() {
         List<String> goodies = new ArrayList<>();
         goodies.add(goodieBagStock.getGood("bag"));
+        goodies.add(goodieBagStock.getGood("sunglasses"));
         goodies.add(goodieBagStock.getGood("voucher"));
         goodies.add(goodieBagStock.getGood("cap"));
         return new GoodieBag(goodies);
@@ -23,6 +24,7 @@ public class GoodieBagManager {
     public GoodieBag pullVipBagFromStock() {
         List<String> goodies = new ArrayList<>();
         goodies.add(goodieBagStock.getGood("bag"));
+        goodies.add(goodieBagStock.getGood("sunglasses"));
         goodies.add(goodieBagStock.getGood("voucher"));
         goodies.add(goodieBagStock.getGood("voucher"));
         goodies.add(goodieBagStock.getGood("voucher"));

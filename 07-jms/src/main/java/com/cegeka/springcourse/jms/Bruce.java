@@ -14,4 +14,13 @@ public class Bruce {
         bookCurrentlyReading = bookName;
         bored = false;
     }
+
+    @Override
+    public String toString() {
+        return "Bruce{" +
+                "thirsty=" + thirsty +
+                ", bored=" + bored +
+                ", bookCurrentlyReading='" + bookCurrentlyReading + '\'' +
+                '}';
+    }
 }

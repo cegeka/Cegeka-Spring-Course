@@ -9,6 +9,7 @@ public class BruceRepository {
 
     public Bruce getBruce() {
         if(bruce == null) {
+            System.out.println("NEW BRUCE");
             bruce = new Bruce();
         }
         return bruce;
@@ -16,6 +17,7 @@ public class BruceRepository {
 
     public Bruce updateBruce(Bruce bruce) {
         this.bruce = bruce;
+        System.out.println("Current state of Bruce: " + bruce.toString());
         return this.bruce;
     }
 }

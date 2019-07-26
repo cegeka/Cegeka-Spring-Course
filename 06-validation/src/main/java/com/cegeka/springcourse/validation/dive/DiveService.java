@@ -2,21 +2,26 @@ package com.cegeka.springcourse.validation.dive;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.validation.annotation.Validated;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Component
+@Validated
 public class DiveService {
 
     @Autowired
     private DiveRepository diveRepository;
 
-    public List<Dive> addDives(List<Dive> dives) {
+    @Validated(OnCreate.class)
+    public List<Dive> addDives(@Valid List<Dive> dives) {
         dives.forEach(Dive::generateId);
         return diveRepository.saveAll(dives);
     }
 
-    public void updateDive(Dive dive) {
+    @Validated(OnUpdate.class)
+    public void updateDive(@Valid Dive dive) {
         diveRepository.save(dive);
     }
 }

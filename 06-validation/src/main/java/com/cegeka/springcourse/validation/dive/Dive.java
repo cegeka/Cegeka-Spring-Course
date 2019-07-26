@@ -3,6 +3,9 @@ package com.cegeka.springcourse.validation.dive;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.UUID;
 
@@ -11,8 +14,14 @@ import java.util.UUID;
 public class Dive implements Serializable {
 
     @Id
+    @NotNull
     private String id;
+    @NotNull
     private String name;
+    @NotNull
+    @Min(value = 5, groups = OnCreate.class)
+    @Min(value = 7, groups = OnUpdate.class)
+    @Max(10)
     private int difficulty;
 
     public Dive(){}

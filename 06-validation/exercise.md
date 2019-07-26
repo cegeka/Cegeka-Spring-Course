@@ -14,7 +14,7 @@ Make sure only valid TeamRegistrations are allowed (TeamRegistrationController).
 3. Teams also have to submit the 'dives' they will attempt to perform during the championship.
 They can later update them. After creating a dive, it will be assigned an ID by the system, so it knows which dive it should update when the update call is used.
 When creating a dive, we should validate if the difficulty is between 5 and 10 and if the name is not null. 
-When updating we should also check if the id is not null. 
+When updating we should check if the difficulty is between 7 and 10. 
 Validate this at domain level.
 4. Registrations from Russia and Lichtenstein are to be denied.
 5. After some previous incidents, registrations from North-Korea and Peru are no longer allowed to bring any entourage with them.

@@ -1,13 +1,17 @@
 package com.cegeka.springcourse.validation.registration;
 
+import com.cegeka.springcourse.validation.registration.validator.CountryBlacklist;
+import com.cegeka.springcourse.validation.registration.validator.EntourageBlacklist;
 import org.springframework.lang.NonNull;
 
 import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.util.List;
 
+@EntourageBlacklist
 public class TeamRegistration implements Serializable {
     @NotNull
+    @CountryBlacklist
     private String country;
     @NotNull
     private String diver1Name;

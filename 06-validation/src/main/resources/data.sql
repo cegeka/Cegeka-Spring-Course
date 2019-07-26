@@ -1,0 +1,5 @@
+CREATE TABLE DIVES (
+  id VARCHAR(40)  PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  difficulty INT NOT NULL
+);

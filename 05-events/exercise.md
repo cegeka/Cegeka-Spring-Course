@@ -5,11 +5,11 @@ Over 50.000 people are expected to attend the concerts and other fun activities.
 Some computer problems might ruin the fun for everyone, though. 
 It's up to you to make sure that does not happen.
 
-a. All attendees get a goodie bag (as long as stock lasts).
-Attendees with a regular ticket receive a goodie bag with:
+a. All attendees get a goodie bag (as long as stock lasts). Attendees with a regular ticket receive a goodie bag with:
  - a pair of sunglasses
  - 1 food/drink voucher
- - a cap <br/> <br/>
+ - a cap <br/> 
+
 Attendees with a VIP ticket receive the same goodie bag with some extra items:
 - a bottle of champagne
 - a tent

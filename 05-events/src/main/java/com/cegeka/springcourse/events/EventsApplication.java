@@ -12,11 +12,10 @@ public class EventsApplication {
 
 	@Bean(name = "applicationEventMulticaster")
 	public ApplicationEventMulticaster simpleApplicationEventMulticaster() {
-		SimpleApplicationEventMulticaster eventMulticaster
-				= new SimpleApplicationEventMulticaster();
-
-		eventMulticaster.setTaskExecutor(new SimpleAsyncTaskExecutor());
-		return eventMulticaster;
+		SimpleApplicationEventMulticaster syncEventMulticaster = new SimpleApplicationEventMulticaster();
+		SimpleApplicationEventMulticaster asyncEventMulticaster = new SimpleApplicationEventMulticaster();
+		asyncEventMulticaster.setTaskExecutor(new SimpleAsyncTaskExecutor());
+		return new SyncAndAsyncEventMulticaster(syncEventMulticaster, asyncEventMulticaster);
 	}
 
 	public static void main(String[] args) {

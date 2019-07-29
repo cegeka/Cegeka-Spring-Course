@@ -1,11 +1,11 @@
 package com.cegeka.springcourse.events.voucher;
 
-import com.cegeka.springcourse.events.goodiebag.GoodieBagPulledEvent;
-import com.cegeka.springcourse.events.goodiebag.GoodieBagStock;
+import com.cegeka.springcourse.events.AsyncListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 
+@AsyncListener
 @Component
 public class VouchersBoughtEventListener implements ApplicationListener<VouchersBoughtEvent> {
 

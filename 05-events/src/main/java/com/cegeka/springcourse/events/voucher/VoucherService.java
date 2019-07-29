@@ -15,6 +15,7 @@ public class VoucherService {
 
     public void buyVouchers(String buyerName, int amount) {
         applicationEventPublisher.publishEvent(new VouchersBoughtEvent(this, buyerName, amount));
+        System.out.println("ASYNC: Continuing after firing event; expecting this one first");
         voucherRepository.loadVouchers(buyerName, amount);
     }
 }

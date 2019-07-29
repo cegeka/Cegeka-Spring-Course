@@ -16,6 +16,7 @@ public class GoodieBagService {
     public GoodieBag getRegularGoodieBag() {
         GoodieBag goodieBag = goodieBagManager.pullRegularBagFromStock();
         applicationEventPublisher.publishEvent(new GoodieBagPulledEvent(this, GoodieBagType.REGULAR));
+        System.out.println("SYNC: Continuing after firing event; expecting this one second");
         return goodieBag;
     }
 

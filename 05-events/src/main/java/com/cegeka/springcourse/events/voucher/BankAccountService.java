@@ -36,6 +36,7 @@ public class BankAccountService {
     private void workHardForABit() {
         try {
             Thread.sleep(3000);
+            System.out.println("ASYNC: In listener after sleep; expecting this one second");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

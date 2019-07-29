@@ -10,7 +10,7 @@ For all of the following exercises 1 rule applies: You are not allowed to alter 
 One extra factor to be brought into consideration is the 'consumedDosis'. 
 Eg: if the suggestedDosisInGrams of a product is 100g and the actualConsumedDosisInGram is 500g, the number of calculated SP by the original formula should be multiplied by 5.
 2. Integration test the FoodProductRepository (see if you can save/retrieve by name)
-3. End to end test the getSmartPointsForFoodProduct REST call. 
+3. End to end test the getSmartPointsForFoodProduct REST call. Do this by first saving a new food item and then getting its SP.
 
 ## Extra
 1. Did you find the bug? You are allowed to correct it.

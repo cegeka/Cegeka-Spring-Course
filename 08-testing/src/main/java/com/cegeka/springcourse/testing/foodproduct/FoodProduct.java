@@ -27,9 +27,10 @@ public class FoodProduct implements Serializable {
     public FoodProduct() {
     }
 
-    public FoodProduct(String productname, int numberOfCalories, int numberOfSaturatedFat, int numberOfProtein, int suggestedDosisInGrams) {
+    public FoodProduct(String productname, int numberOfCalories, int numberOfSugar, int numberOfSaturatedFat, int numberOfProtein, int suggestedDosisInGrams) {
         this.productname = productname;
         this.numberOfCalories = numberOfCalories;
+        this.numberOfSugar = numberOfSugar;
         this.numberOfSaturatedFat = numberOfSaturatedFat;
         this.numberOfProtein = numberOfProtein;
         this.suggestedDosisInGrams = suggestedDosisInGrams;

@@ -13,7 +13,11 @@ public class FoodProductService {
     private SmartPointsCalculator calculator;
 
     public void add(FoodProduct foodProduct) {
-        repository.save(foodProduct);
+        if(get(foodProduct.getProductname()) == null) {
+            repository.save(foodProduct);
+        } else {
+            throw new IllegalArgumentException("Fooditem with name " + foodProduct.getProductname() + " already exists!");
+        }
     }
 
     public FoodProduct get(String name) {

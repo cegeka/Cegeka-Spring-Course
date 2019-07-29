@@ -8,6 +8,6 @@ public class ConsumedDosisCalculator {
 
 
     public float calculate(FoodProduct foodProduct, int actualConsumedDosisInGram) {
-        return (float) foodProduct.getSuggestedDosisInGrams() / actualConsumedDosisInGram;
+        return (float) actualConsumedDosisInGram / foodProduct.getSuggestedDosisInGrams();
     }
 }

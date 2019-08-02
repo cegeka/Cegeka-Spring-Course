@@ -11,7 +11,8 @@ public class DonkeyKongService {
     public static int coinsRemaining = 0;
 
     @Retryable(
-            value = {GameOverException.class}
+            value = {GameOverException.class},
+            maxAttempts = Integer.MAX_VALUE
     )
     public String play(String player) {
         if (coinsRemaining == 0) {

@@ -1,5 +1,7 @@
 package com.cegeka.springcourse.retry;
 
+import org.springframework.retry.annotation.Recover;
+import org.springframework.retry.annotation.Retryable;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
@@ -8,6 +10,9 @@ import java.time.LocalDateTime;
 public class DonkeyKongService {
     public static int coinsRemaining = 0;
 
+    @Retryable(
+            value = {GameOverException.class}
+    )
     public String play(String player) {
         if (coinsRemaining == 0) {
             throw new OutOfCoinsException();
@@ -33,5 +38,10 @@ public class DonkeyKongService {
             throw new GameOverException();
         }
         return 200;
+    }
+
+    @Recover
+    public String recover(OutOfCoinsException o, String player) {
+        return player + " going home";
     }
 }

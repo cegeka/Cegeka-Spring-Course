@@ -9,12 +9,13 @@ public class DonkeyKongService {
     public static int coinsRemaining = 0;
 
     public String play(String player) {
-        if(coinsRemaining == 0) {
+        coinsRemaining--;
+        if (coinsRemaining == 0) {
             throw new OutOfCoinsException();
         }
         int score = 0;
         System.out.println(player + " started playing donkey kong");
-        while(score < 1602) {
+        while (score < 1602) {
             score += keepPlaying();
             System.out.println("Current score is " + score);
         }
@@ -27,7 +28,7 @@ public class DonkeyKongService {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        if(LocalDateTime.now().getSecond() % 10 == 5) {
+        if (LocalDateTime.now().getSecond() % 10 == 5) {
             throw new GameOverException();
         }
         return 200;

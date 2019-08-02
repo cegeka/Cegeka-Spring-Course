@@ -9,9 +9,10 @@ public class DonkeyKongService {
     public static int coinsRemaining = 0;
 
     public String play(String player) {
-        coinsRemaining--;
         if (coinsRemaining == 0) {
             throw new OutOfCoinsException();
+        } else {
+            coinsRemaining--;
         }
         int score = 0;
         System.out.println(player + " started playing donkey kong");

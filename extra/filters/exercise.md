@@ -13,4 +13,8 @@ Luckily, you've recently hired a professional to guard the doors of you club, mi
     3. Logging to console who wants to enter
     4. Logging to console that the request has successfully completed for the user id (should happen _after_ the request returns)
 6. Some members tend to forget their credentials, but are old friends of the owner, so they should be able to enter anyway. Create a new rest endpoint on /back-entrance/{id}.
-The checks on the header and memberId should not happen when calling this url (so it should be possible to perform a request without those two requirements when calling the backdoor, while the regular entrance should still be secured).   
+The checks on the header and memberId should not happen when calling this url (so it should be possible to perform a request without those two requirements when calling the backdoor, while the regular entrance should still be secured).
+
+# Handy link
+
+[On determining which filters should be used on which urls](https://www.surasint.com/spring-boot-filter-urlpattern/)    

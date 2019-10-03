@@ -15,6 +15,7 @@ Luckily, you've recently hired a professional to guard the doors of you club, mi
 6. Some members tend to forget their credentials, but are old friends of the owner, so they should be able to enter anyway. Create a new rest endpoint on /back-entrance/{id}.
 The checks on the header and memberId should not happen when calling this url (so it should be possible to perform a request without those two requirements when calling the backdoor, while the regular entrance should still be secured).
 
-# Handy link
+# Handy links
 
 [On determining which filters should be used on which urls](https://www.surasint.com/spring-boot-filter-urlpattern/)    
+Spring has its own, similar mechanism, called [Interceptors](https://www.tutorialspoint.com/spring_boot/spring_boot_interceptor.htm)

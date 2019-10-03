@@ -1,0 +1,32 @@
+<div class="container-fluid mt-4">
+  <button *ngIf="canAddBooks()" class="btn btn-primary float-right" [routerLink]="['/books-add']">Add</button>
+  <div class="row">
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Author</th>
+        <th scope="col">Rate me!</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let book of books$ | async">
+        <td>{{book.name}}</td>
+        <td>{{book.author}}</td>
+        <td>
+          <div *ngIf="rated.indexOf(book.id) === -1">
+            <i class="far fa-star" (click)="rate(book.id, 1)"></i>
+            <i class="far fa-star" (click)="rate(book.id, 2)"></i>
+            <i class="far fa-star" (click)="rate(book.id, 3)"></i>
+            <i class="far fa-star" (click)="rate(book.id, 4)"></i>
+            <i class="far fa-star" (click)="rate(book.id, 5)"></i>
+          </div>
+          <div *ngIf="rated.indexOf(book.id) !== -1">
+            RATED
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

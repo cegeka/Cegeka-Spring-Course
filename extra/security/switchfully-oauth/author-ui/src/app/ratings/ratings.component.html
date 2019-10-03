@@ -1,0 +1,27 @@
+<div class="container-fluid mt-4">
+  <div class="row">
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Author</th>
+        <th scope="col">Avg rating</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let book of books$ | async">
+        <td>{{book.name}}</td>
+        <td>{{book.author}}</td>
+        <td>
+          <div *ngIf="book.ratings.length >0" title="{{getRaters(book.ratings)}}">
+            {{getRatingsAvg(book.ratings)}} <i class="far fa-star"></i>
+          </div>
+          <div *ngIf="book.ratings.length  === 0">
+            No ratings yet
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
